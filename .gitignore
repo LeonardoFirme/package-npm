@@ -1,0 +1,14 @@
+# 1. Crie ou atualize o arquivo .gitignore
+echo "node_modules/
+dist/
+.npmrc
+.DS_Store" > .gitignore
+
+# 2. Remova os arquivos do rastreamento do Git (sem apagar do seu PC)
+git rm -r --cached node_modules
+git rm --cached .npmrc
+
+# 3. Commit e Push da correção
+git add .gitignore
+git commit -m "chore: ignore node_modules and npmrc for security"
+git push origin main
