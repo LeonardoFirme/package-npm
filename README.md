@@ -19,7 +19,7 @@ Para que o Tailwind identifique as classes utilitárias dentro do pacote instala
 @import "tailwindcss";
 
 /* Adicione esta linha para ler os componentes da v0 Digital */
-@source "../../node_modules/@LeonardoFirme/package-npm/dist";
+@source "../../node_modules/@leonardolirme/package-npm/dist";
 
 ```
 
@@ -45,7 +45,7 @@ Este pacote utiliza dependências modernas para garantir performance e seguranç
 Botão responsivo com suporte nativo a **Dark Mode** (bg-gray-800 -> bg-gray-50) e transições suaves.
 
 ```tsx
-import { Button } from '@LeonardoFirme/package-npm';
+import { Button } from '@leonardofirme/package-npm';
 
 export default function Dashboard() {
   return (
@@ -64,7 +64,7 @@ export default function Dashboard() {
 Gerencie o estado visual da sua plataforma de forma centralizada.
 
 ```tsx
-import { useTheme } from '@LeonardoFirme/package-npm';
+import { useTheme } from '@leonardofirme/package-npm';
 
 export function ThemeToggle() {
   const { theme, toggleTheme } = useTheme();
