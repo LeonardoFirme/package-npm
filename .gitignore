@@ -12,3 +12,4 @@ git rm --cached .npmrc
 git add .gitignore
 git commit -m "chore: ignore node_modules and npmrc for security"
 git push origin main
+node_modules

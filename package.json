@@ -1,6 +1,6 @@
 {
   "name": "@LeonardoFirme/package-npm",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Biblioteca de componentes profissionais para ERP/SaaS",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -33,5 +33,13 @@
   "peerDependencies": {
     "react": ">=19.0.0",
     "react-dom": ">=19.0.0"
+  },
+  "dependencies": {
+    "@react-icons/all-files": "^4.1.0",
+    "bcrypt": "^6.0.0",
+    "framer-motion": "^12.34.3",
+    "jsonwebtoken": "^9.0.3",
+    "next-auth": "^4.24.13",
+    "sonner": "^2.0.7"
   }
 }
