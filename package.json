@@ -1,0 +1,37 @@
+{
+  "name": "@LeonardoFirme/package-npm",
+  "version": "1.0.0",
+  "description": "Biblioteca de componentes profissionais para ERP/SaaS",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LeonardoFirme/package-npm.git"
+  },
+  "scripts": {
+    "build": "tsup src/index.tsx --format cjs,esm --dts --minify --clean",
+    "dev": "tsup src/index.tsx --format cjs,esm --watch --dts",
+    "lint": "eslint src"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2"
+  },
+  "peerDependencies": {
+    "react": ">=19.0.0",
+    "react-dom": ">=19.0.0"
+  }
+}

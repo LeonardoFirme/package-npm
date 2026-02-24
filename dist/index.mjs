@@ -1,0 +1,1 @@
+import{jsx as o}from"react/jsx-runtime";var a=({label:t,className:r="",...e})=>o("button",{...e,className:`px-4 py-2 text-sm font-medium transition-colors rounded-md border bg-gray-800 text-gray-50 border-gray-200 hover:bg-gray-950 dark:bg-gray-50 dark:text-gray-950 dark:border-gray-800 dark:hover:bg-gray-200 ${r}`,children:t});export{a as Button};
