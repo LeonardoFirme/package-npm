@@ -1,6 +1,6 @@
 {
   "name": "@LeonardoFirme/package-npm",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Biblioteca modular de componentes e utilitários de alto nível para ecossistemas modernos.",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -15,6 +15,13 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/LeonardoFirme/package-npm.git"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
   },
   "scripts": {
     "dev": "tsup src/index.tsx --watch --dts",
