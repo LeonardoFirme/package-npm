@@ -11,23 +11,30 @@ npm install @LeonardoFirme/package-npm
 
 ```
 
+## 🎨 Configuração do Tailwindcss v4
+
+Para que o Tailwind identifique as classes utilitárias dentro do pacote instalado em `node_modules`, adicione a diretiva `@source` no seu arquivo CSS principal:
+
+```css
+@import "tailwindcss";
+
+/* Adicione esta linha para ler os componentes da v0 Digital */
+@source "../../node_modules/@LeonardoFirme/package-npm/dist";
+
+```
+
 ## 📦 Dependências Integradas
 
-Caso você precise instalar as dependências separadamente ou queira saber o que compõe este pacote, aqui estão os comandos de instalação:
+Este pacote utiliza dependências modernas para garantir performance e segurança. Elas são instaladas automaticamente, mas você pode referenciá-las conforme sua stack:
 
 ### UI & UX (Client Side)
 
-```bash
-npm install sonner framer-motion @react-icons/all-files
+* `sonner` & `framer-motion` (Feedback e Animações)
+* `clsx` & `tailwind-merge` (Gestão de Classes)
 
-```
+### Auth & Security (Server Side / Proxy)
 
-### Auth & Security (Server Side)
-
-```bash
-npm install next-auth bcrypt jsonwebtoken
-
-```
+* `next-auth`, `bcrypt`, `jsonwebtoken`
 
 ---
 
@@ -35,7 +42,7 @@ npm install next-auth bcrypt jsonwebtoken
 
 ### Componente: Button (Minimalist ERP)
 
-Botão responsivo com suporte nativo a **Dark Mode** e transições suaves.
+Botão responsivo com suporte nativo a **Dark Mode** (bg-gray-800 -> bg-gray-50) e transições suaves.
 
 ```tsx
 import { Button } from '@LeonardoFirme/package-npm';
@@ -45,16 +52,30 @@ export default function Dashboard() {
     <Button
       label="Salvar Alterações"
       className="w-full sm:w-auto"
-      onClick={() => alert('Operação realizada com sucesso!')}
+      onClick={() => console.log('Operação realizada')}
     />
   );
 }
 
 ```
 
+### Hook: useTheme (Dark Mode Global)
+
+Gerencie o estado visual da sua plataforma de forma centralizada.
+
+```tsx
+import { useTheme } from '@LeonardoFirme/package-npm';
+
+export function ThemeToggle() {
+  const { theme, toggleTheme } = useTheme();
+  return <button onClick={toggleTheme}>Modo Atual: {theme}</button>;
+}
+
+```
+
 ## ⚙️ Configuração de Publicação Automatizada
 
-Para garantir a integridade do pacote, utilizamos **GitHub Actions**. O arquivo abaixo automatiza o Build e o Publish sempre que houver um push na branch `main`.
+Utilizamos **GitHub Actions** para garantir que cada release seja validada via `type-check` antes do deploy.
 
 **Caminho:** `.github/workflows/publish.yml`
 
@@ -93,5 +114,9 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 ```
+
+---
+
+Desenvolvido por [Leonardo Firme](https://github.com/LeonardoFirme) | **v0 Digital**
 
 ---

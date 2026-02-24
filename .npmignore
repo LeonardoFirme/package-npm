@@ -1,0 +1,16 @@
+# Pastas de código fonte e testes
+src/
+tests/
+coverage/
+
+# Configurações de ferramentas
+tsup.config.ts
+tsconfig.json
+jest.config.js
+.github/
+.husky/
+
+# Logs e Cache
+npm-debug.log
+.turbo
+.next
