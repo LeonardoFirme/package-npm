@@ -1,0 +1,44 @@
+# @name Publish Package
+# @description Workflow para automação de Build e Deploy no GitHub Packages.
+# @author Leonardo Firme | v0 Digital
+
+name: Publish Package
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - name: 🚀 Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: 🟢 Setup Node.js (v22)
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@LeonardoFirme'
+
+      - name: 📦 Install Dependencies
+        run: npm install
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 🛠️ Build & Type Check
+        run: |
+          npm run build
+          npm run type-check
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 🚢 Publish to GitHub Packages
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
