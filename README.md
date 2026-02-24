@@ -22,9 +22,8 @@ export default function App() {
 
 ```
 
-```
-
 #### B. Automação (GitHub Actions)
+
 Atualmente, você precisa fazer o `npm run build` e o `npm publish` manualmente. Podemos criar um script que faz isso sozinho toda vez que você fizer um `git push` com uma nova versão.
 
 **Deseja que eu prepare o arquivo do GitHub Actions para automatizar suas publicações futuras?**
