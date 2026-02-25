@@ -1,6 +1,6 @@
 {
   "name": "@leonardofirme/package-npm",
-  "version": "1.2.3",
+  "version": "1.2.6",
   "description": "Biblioteca modular de componentes e utilitários de alto nível para ecossistemas modernos.",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
